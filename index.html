@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Kelebek - Regalos y Cumpleaños">
+<title>Kelebek</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="app-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="icons/logo.png" alt="Kelebek" class="brand-logo">
+      <span>Kelebek</span>
+    </div>
+    <button class="icon-btn cart-btn" id="cartBtn" aria-label="Carrito">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+
+  <div class="search-wrap">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+    <button class="clear-search hidden" id="clearSearch" aria-label="Limpiar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <nav class="categories" id="categoriesNav" aria-label="Categorías"></nav>
+</header>
+
+<!-- ============ MAIN ============ -->
+<main id="main">
+  <section class="hero" id="hero">
+    <h1>Bienvenido a Kelebek</h1>
+    <p>Regalos y Cumpleaños</p>
+  </section>
+
+  <section class="offers-section hidden" id="offersSection">
+    <h2 class="section-title"><i class="fa-solid fa-tags"></i> Ofertas</h2>
+    <div class="product-grid" id="offersGrid"></div>
+  </section>
+
+  <section class="products-section">
+    <h2 class="section-title" id="sectionTitle"><i class="fa-solid fa-box"></i> Todos los productos</h2>
+    <div class="product-grid" id="productsGrid"></div>
+    <div id="emptyState" class="empty-state hidden">
+      <i class="fa-solid fa-box-open"></i>
+      <p>No se encontraron productos</p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FLOATING ACTIONS STACK ============ -->
+<div class="fab-stack" id="fabStack">
+
+  <div class="location-panel" id="locationPanel" aria-hidden="true">
+    <div class="info-card">
+      <h3 class="info-title"><i class="fa-solid fa-location-dot"></i> Ubicación</h3>
+      <p class="info-text" id="locationAddress"></p>
+      <a class="info-btn" id="locationMapBtn" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Ver en el mapa
+      </a>
+    </div>
+  </div>
+
+  <div class="fab-actions" id="fabActions">
+    <a class="fab-mini" id="fabInstagram" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a class="fab-mini" id="fabWhatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="fab-mini" id="fabMaps" aria-label="Ubicación" aria-expanded="false">
+      <i class="fa-solid fa-location-dot"></i>
+    </button>
+    <button class="fab-mini" id="fabCall" aria-label="Llamar">
+      <i class="fa-solid fa-phone"></i>
+    </button>
+  </div>
+
+  <button class="fab fab-info" id="infoFab" aria-label="Información de la tienda">
+    <i class="fa-solid fa-info"></i>
+  </button>
+</div>
+
+<!-- ============ CARRITO DRAWER ============ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <header class="cart-header">
+    <h2><i class="fa-solid fa-cart-shopping"></i> Carrito</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Cerrar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </header>
+
+  <div class="cart-body" id="cartBody"></div>
+
+  <footer class="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">$0.00</strong>
+    </div>
+    <div class="cart-footer-actions">
+      <button class="btn-secondary" id="clearCart">
+        <i class="fa-solid fa-trash"></i> Vaciar
+      </button>
+      <button class="btn-primary" id="checkoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> Pedir
+      </button>
+    </div>
+  </footer>
+</aside>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="js/store-info.js"></script>
+
+<script src="js/products/alimentos.js"></script>
+<script src="js/products/bebidas.js"></script>
+<script src="js/products/embutidos.js"></script>
+<script src="js/products/confituras.js"></script>
+<script src="js/products/aseo.js"></script>
+<script src="js/products/limpieza.js"></script>
+<script src="js/products/perfumes.js"></script>
+<script src="js/products/ropa.js"></script>
+<script src="js/products/calzado.js"></script>
+<script src="js/products/hogar.js"></script>
+
+<script src="js/products/index.js"></script>
+
+<script src="js/ofertas.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
