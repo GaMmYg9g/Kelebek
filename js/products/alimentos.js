@@ -30,7 +30,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-004',
     nombre: 'Mayonesa Findy',
     descripcion: '',
-    precio: 0,
+    precio: 950,
     imagen: 'img/mayonesaFind.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
