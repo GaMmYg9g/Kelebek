@@ -295,6 +295,14 @@
       const chk = domDiv.querySelector('#chkDomicilio');
       chk.addEventListener('change', (e) => {
         window.DomicilioState.incluir = e.target.checked;
+        
+        // Si lo desmarca, limpiamos los datos de envío por si acaso
+        if (!e.target.checked) {
+          window.DomicilioState.nombre = '';
+          window.DomicilioState.movil = '';
+          window.DomicilioState.direccion = '';
+        }
+        
         renderCartItems();
       });
 
@@ -315,7 +323,12 @@
   $('#clearCart').addEventListener('click', () => {
     if (confirm('¿Vaciar el carrito?')){
       window.Cart.clear();
-      if (window.DomicilioState) window.DomicilioState.incluir = false;
+      if (window.DomicilioState) {
+        window.DomicilioState.incluir = false;
+        window.DomicilioState.nombre = '';
+        window.DomicilioState.movil = '';
+        window.DomicilioState.direccion = '';
+      }
       updateCartUI();
     }
   });
@@ -343,9 +356,14 @@
     });
 
     const incluirDom = window.DomicilioState && window.DomicilioState.incluir && window.DOMICILIO_CONFIG.activo;
+    
     if (incluirDom) {
       detalle += `*Domicilio:*\n`;
       detalle += `    ${window.DOMICILIO_CONFIG.precio} ${window.DOMICILIO_CONFIG.moneda}\n\n`;
+      detalle += `*DATOS DE ENTREGA*\n`;
+      detalle += `    Nombre: ${window.DomicilioState.nombre}\n`;
+      detalle += `    Móvil: ${window.DomicilioState.movil}\n`;
+      detalle += `    Dirección: ${window.DomicilioState.direccion}\n\n`;
     }
 
     const totalArticulos = items.reduce((a,i) => a + i.qty, 0);
@@ -383,11 +401,21 @@ ${LINE}
   $('#checkoutBtn').addEventListener('click', () => {
     if (window.Cart.items.length === 0) return;
 
-    if (window.DOMICILIO_CONFIG && window.DOMICILIO_CONFIG.activo && !window.DomicilioState.incluir) {
-      if (typeof window.abrirModalSeguroDomicilio === 'function') {
-        window.abrirModalSeguroDomicilio();
+    if (window.DOMICILIO_CONFIG && window.DOMICILIO_CONFIG.activo) {
+      if (window.DomicilioState.incluir) {
+        // Ya está marcado: abrimos el formulario de datos
+        if (typeof window.abrirModalDatosDomicilio === 'function') {
+          window.abrirModalDatosDomicilio();
+        } else {
+          procederConCheckout(); // Fallback
+        }
       } else {
-        procederConCheckout();
+        // No está marcado: abrimos el seguro (segunda oportunidad)
+        if (typeof window.abrirModalSeguroDomicilio === 'function') {
+          window.abrirModalSeguroDomicilio();
+        } else {
+          procederConCheckout();
+        }
       }
     } else {
       procederConCheckout();
@@ -405,9 +433,14 @@ ${LINE}
     const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
 
-    // Limpiamos el carrito
+    // Limpiamos el carrito y el estado del domicilio
     window.Cart.clear();
-    if (window.DomicilioState) window.DomicilioState.incluir = false;
+    if (window.DomicilioState) {
+      window.DomicilioState.incluir = false;
+      window.DomicilioState.nombre = '';
+      window.DomicilioState.movil = '';
+      window.DomicilioState.direccion = '';
+    }
     updateCartUI();
     closeCart();
   };
