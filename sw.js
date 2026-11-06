@@ -16,6 +16,7 @@ const PRECACHE = [
   './js/search.js',
   './js/store-info.js',
   './js/ofertas.js',
+  './js/domicilio.js', // NUEVO
   
   './js/products/alimentos.js',
   './js/products/bebidas.js',
