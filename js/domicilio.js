@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="form-group">
             <label for="domMovil">Móvil</label>
-            <input type="tel" id="domMovil" required placeholder="Ej: 5359283669">
+            <input type="tel" id="domMovil" required placeholder="Ej: 55555555">
           </div>
           <div class="form-group">
             <label for="domDireccion">Dirección exacta</label>
