@@ -3,7 +3,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-001',
     nombre: 'Aceite',
     descripcion: 'Pomo de Aceite de 900ml',
-    precio: 2600,
+    precio: 2800,
     imagen: 'img/aceite.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
