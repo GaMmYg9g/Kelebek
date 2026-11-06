@@ -277,7 +277,6 @@ main{max-width:1200px;margin:0 auto;padding:20px 16px}
   transition:opacity .2s ease, transform .2s ease;
 }
 
-/* Ocultar el stack cuando el carrito está abierto */
 body.drawer-open .fab-stack{
   opacity:0 !important;
   pointer-events:none !important;
@@ -432,3 +431,108 @@ body.drawer-open .fab-stack > *{
   transform:scale(.97);
 }
 .info-btn i{ font-size:.95rem; }
+
+/* ============ MODAL DOMICILIO (Segunda confirmación) ============ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-title i { color: var(--gold); }
+
+.modal-text {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.modal-text strong { color: var(--black); }
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.modal-actions button {
+  padding: 12px;
+}
+
+/* ============ AVISO DOMICILIO EN EL CARRITO (Checkbox) ============ */
+.cart-domicilio-banner {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--gray-50);
+  border: 1.5px dashed var(--gray-300);
+  border-radius: var(--radius-sm);
+  color: var(--gray-900);
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.cart-domicilio-banner.active {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: var(--gold);
+  border-style: solid;
+}
+
+.domicilio-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+}
+
+.domicilio-toggle input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--gold);
+  cursor: pointer;
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-text span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.toggle-text small {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  margin-top: 2px;
+}
