@@ -26,20 +26,15 @@
     }[c]));
   }
 
-  // --- NUEVAS FUNCIONES PARA MANEJAR ENLACES O NÚMEROS ---
   function getWhatsappUrl(phoneOrUrl, text = '') {
     if (!phoneOrUrl) return '#';
-    if (phoneOrUrl.startsWith('http')) {
-      return phoneOrUrl; // Es un enlace de grupo, se devuelve tal cual
-    }
+    if (phoneOrUrl.startsWith('http')) return phoneOrUrl;
     return `https://wa.me/${phoneOrUrl}${text ? '?text=' + text : ''}`;
   }
 
   function getInstagramUrl(userOrUrl) {
     if (!userOrUrl) return '#';
-    if (userOrUrl.startsWith('http')) {
-      return userOrUrl; // Es un enlace completo, se devuelve tal cual
-    }
+    if (userOrUrl.startsWith('http')) return userOrUrl;
     return `https://instagram.com/${userOrUrl}`;
   }
 
@@ -279,12 +274,48 @@
       body.appendChild(div);
     });
 
-    totalEl.textContent = formatPrice(window.Cart.total());
+    if (window.DOMICILIO_CONFIG && window.DOMICILIO_CONFIG.activo) {
+      const domDiv = document.createElement('div');
+      domDiv.className = 'cart-domicilio-banner';
+      
+      if (window.DomicilioState && window.DomicilioState.incluir) {
+        domDiv.classList.add('active');
+      }
+
+      domDiv.innerHTML = `
+        <label class="domicilio-toggle">
+          <input type="checkbox" id="chkDomicilio" ${window.DomicilioState.incluir ? 'checked' : ''}>
+          <div class="toggle-text">
+            <span>¿Deseas envío a domicilio?</span>
+            <small>${window.DOMICILIO_CONFIG.mensaje}</small>
+          </div>
+        </label>
+      `;
+
+      const chk = domDiv.querySelector('#chkDomicilio');
+      chk.addEventListener('change', (e) => {
+        window.DomicilioState.incluir = e.target.checked;
+        renderCartItems();
+      });
+
+      body.appendChild(domDiv);
+    }
+
+    // Calcular total sumando el domicilio matemáticamente
+    let total = window.Cart.total();
+    if (window.DomicilioState && window.DomicilioState.incluir && window.DOMICILIO_CONFIG.activo) {
+      total += window.DOMICILIO_CONFIG.precio;
+    }
+
+    totalEl.textContent = formatPrice(total);
   }
+
+  window.actualizarCarritoVisual = updateCartUI;
 
   $('#clearCart').addEventListener('click', () => {
     if (confirm('¿Vaciar el carrito?')){
       window.Cart.clear();
+      if (window.DomicilioState) window.DomicilioState.incluir = false;
       updateCartUI();
     }
   });
@@ -311,7 +342,20 @@
       detalle += `    Subtotal: ${formatPrice(subtotal)}\n\n`;
     });
 
+    const incluirDom = window.DomicilioState && window.DomicilioState.incluir && window.DOMICILIO_CONFIG.activo;
+    if (incluirDom) {
+      detalle += `*Domicilio:*\n`;
+      detalle += `    ${window.DOMICILIO_CONFIG.precio} ${window.DOMICILIO_CONFIG.moneda}\n\n`;
+    }
+
     const totalArticulos = items.reduce((a,i) => a + i.qty, 0);
+    
+    // Calcular total sumando el domicilio
+    let totalFinal = window.Cart.total();
+    if (incluirDom) {
+      totalFinal += window.DOMICILIO_CONFIG.precio;
+    }
+    let totalFinalStr = formatPrice(totalFinal);
 
     const msg =
 `*NUEVO PEDIDO - ${info.nombre.toUpperCase()}*
@@ -323,7 +367,7 @@ ${LINE}
 ${detalle}${LINE}
 *RESUMEN*
 
-   Total: ${formatPrice(window.Cart.total())}
+   Total: ${totalFinalStr}
    Artículos: ${totalArticulos}
 
 ${LINE}
@@ -339,29 +383,34 @@ ${LINE}
   $('#checkoutBtn').addEventListener('click', () => {
     if (window.Cart.items.length === 0) return;
 
+    if (window.DOMICILIO_CONFIG && window.DOMICILIO_CONFIG.activo && !window.DomicilioState.incluir) {
+      if (typeof window.abrirModalSeguroDomicilio === 'function') {
+        window.abrirModalSeguroDomicilio();
+      } else {
+        procederConCheckout();
+      }
+    } else {
+      procederConCheckout();
+    }
+  });
+
+  window.procederConCheckout = function() {
     const info = window.STORE_INFO;
     const msg  = buildOrderMessage();
-    const isGroupLink = info.whatsapp.startsWith('http');
+    
+    // Buscamos el número de pedidos. Si no existe, usamos el teléfono.
+    const numeroDestino = info.whatsappPedidos || info.telefono;
+    
+    // Abrimos el chat personal con el mensaje pre-rellenado
+    const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
 
-    if (isGroupLink) {
-      // Si es un enlace de grupo, copiamos el pedido al portapapeles y abrimos el grupo
-      navigator.clipboard.writeText(msg).then(() => {
-        alert('El pedido se ha copiado al portapapeles. Pégalo en el grupo de WhatsApp que se abrirá a continuación.');
-        window.open(info.whatsapp, '_blank');
-      }).catch(() => {
-        // Si falla la copia (por ejemplo, por no tener HTTPS), abrimos el grupo de todas formas
-        window.open(info.whatsapp, '_blank');
-      });
-    } else {
-      // Si es un número de teléfono, usamos el envío normal con el mensaje pre-rellenado
-      const url = getWhatsappUrl(info.whatsapp, encodeURIComponent(msg));
-      window.open(url, '_blank');
-    }
-
+    // Limpiamos el carrito
     window.Cart.clear();
+    if (window.DomicilioState) window.DomicilioState.incluir = false;
     updateCartUI();
     closeCart();
-  });
+  };
 
   const fabStack      = $('#fabStack');
   const infoFab       = $('#infoFab');
@@ -425,8 +474,7 @@ ${LINE}
       window.location.href = `tel:${info.telefono}`;
     });
     
-    // Usamos las nuevas funciones para generar los enlaces correctamente
-    $('#fabWhatsapp').href  = getWhatsappUrl(info.whatsapp);
+    $('#fabWhatsapp').href  = info.whatsappGrupo || getWhatsappUrl(info.whatsappPedidos);
     $('#fabInstagram').href = getInstagramUrl(info.instagram);
   }
 
