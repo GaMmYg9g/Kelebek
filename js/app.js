@@ -26,6 +26,23 @@
     }[c]));
   }
 
+  // --- NUEVAS FUNCIONES PARA MANEJAR ENLACES O NÚMEROS ---
+  function getWhatsappUrl(phoneOrUrl, text = '') {
+    if (!phoneOrUrl) return '#';
+    if (phoneOrUrl.startsWith('http')) {
+      return phoneOrUrl; // Es un enlace de grupo, se devuelve tal cual
+    }
+    return `https://wa.me/${phoneOrUrl}${text ? '?text=' + text : ''}`;
+  }
+
+  function getInstagramUrl(userOrUrl) {
+    if (!userOrUrl) return '#';
+    if (userOrUrl.startsWith('http')) {
+      return userOrUrl; // Es un enlace completo, se devuelve tal cual
+    }
+    return `https://instagram.com/${userOrUrl}`;
+  }
+
   function renderCategories(){
     const nav = $('#categoriesNav');
     nav.innerHTML = '';
@@ -324,9 +341,22 @@ ${LINE}
 
     const info = window.STORE_INFO;
     const msg  = buildOrderMessage();
-    const url  = `https://wa.me/${info.whatsapp}?text=${encodeURIComponent(msg)}`;
+    const isGroupLink = info.whatsapp.startsWith('http');
 
-    window.open(url, '_blank');
+    if (isGroupLink) {
+      // Si es un enlace de grupo, copiamos el pedido al portapapeles y abrimos el grupo
+      navigator.clipboard.writeText(msg).then(() => {
+        alert('El pedido se ha copiado al portapapeles. Pégalo en el grupo de WhatsApp que se abrirá a continuación.');
+        window.open(info.whatsapp, '_blank');
+      }).catch(() => {
+        // Si falla la copia (por ejemplo, por no tener HTTPS), abrimos el grupo de todas formas
+        window.open(info.whatsapp, '_blank');
+      });
+    } else {
+      // Si es un número de teléfono, usamos el envío normal con el mensaje pre-rellenado
+      const url = getWhatsappUrl(info.whatsapp, encodeURIComponent(msg));
+      window.open(url, '_blank');
+    }
 
     window.Cart.clear();
     updateCartUI();
@@ -394,8 +424,10 @@ ${LINE}
     $('#fabCall').addEventListener('click', () => {
       window.location.href = `tel:${info.telefono}`;
     });
-    $('#fabWhatsapp').href  = `https://wa.me/${info.whatsapp}`;
-    $('#fabInstagram').href = `https://instagram.com/${info.instagram}`;
+    
+    // Usamos las nuevas funciones para generar los enlaces correctamente
+    $('#fabWhatsapp').href  = getWhatsappUrl(info.whatsapp);
+    $('#fabInstagram').href = getInstagramUrl(info.instagram);
   }
 
   const lightbox    = $('#lightbox');
