@@ -9,7 +9,7 @@ window.DOMICILIO_CONFIG = {
   mensaje: '200 CUP en todo Ciego de Ávila'
 };
 
-// Estado global del domicilio
+// Estado global del domiciliox
 window.DomicilioState = {
   incluir: false
 };
