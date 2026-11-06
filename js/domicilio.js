@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <form id="formDomicilio">
           <div class="form-group">
-            <label for="domNombre">Nombre</label>
+            <label for="domNombre">Nombre del comprador</label>
             <input type="text" id="domNombre" required placeholder="Ej: Ana Pérez">
           </div>
           <div class="form-group">
-            <label for="domMovil">Móvil</label>
+            <label for="domMovil">Móvil para contactar</label>
             <input type="tel" id="domMovil" required placeholder="Ej: 55555555">
           </div>
           <div class="form-group">
