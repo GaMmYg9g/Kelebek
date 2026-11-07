@@ -35,4 +35,22 @@ window.PRODUCTS_BEBIDAS = [
     estado: 'disponible',
     categoria: 'Bebidas'
   },
+  {
+    id: 'beb-005',
+    nombre: 'Cream de Vie',
+    descripcion: '',
+    precio: 1650,
+    imagen: 'img/cremVieR.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-006',
+    nombre: 'Cream de Vie',
+    descripcion: '',
+    precio: 1650,
+    imagen: 'img/cremVieA.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
 ];
