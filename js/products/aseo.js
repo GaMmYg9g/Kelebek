@@ -13,7 +13,7 @@ window.PRODUCTS_ASEO = [
     id: 'aseo-002',
     nombre: 'Champú y Acondicionador',
     descripcion: 'Juego de Rosa y de Miel',
-    precio: 2500,
+    precio: 3300,
     imagen: 'img/shampRosMiel.jpg',
     estado: 'disponible',
     categoria: 'Aseo Personal'
@@ -22,7 +22,7 @@ window.PRODUCTS_ASEO = [
     id: 'aseo-003',
     nombre: 'Juego de Champú y Acondicionador',
     descripcion: '',
-    precio: 2500,
+    precio: 3300,
     imagen: 'img/champArgan.jpg',
     estado: 'agotado',
     categoria: 'Aseo Personal'
@@ -31,7 +31,7 @@ window.PRODUCTS_ASEO = [
     id: 'aseo-004',
     nombre: 'Keratin Classic',
     descripcion: 'Jugo de Champú y Acondicionador',
-    precio: 950,
+    precio: 3500,
     imagen: 'img/keratinaClass.jpg',
     estado: 'disponible',
     categoria: 'Aseo Personal'
