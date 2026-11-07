@@ -32,7 +32,7 @@ window.PRODUCTS_ALIMENTOS = [
     descripcion: '',
     precio: 1000,
     imagen: 'img/mayonesaFind.jpg',
-    estado: 'disponible',
+    estado: 'agotado',
     categoria: 'Alimentos'
   },
   {
