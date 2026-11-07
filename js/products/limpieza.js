@@ -5,7 +5,7 @@ window.PRODUCTS_LIMPIEZA = [
     descripcion: '',
     precio: 950,
     imagen: 'img/detergAreli.jpg',
-    estado: 'disponible',
+    estado: 'agotado',
     categoria: 'Limpieza del Hogar'
   },
   {
