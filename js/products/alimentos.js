@@ -165,7 +165,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-019',
     nombre: 'Coditos',
     descripcion: '',
-    precio: 650,
+    precio: 850,
     imagen: 'img/codito.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
