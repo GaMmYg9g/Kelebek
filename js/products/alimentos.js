@@ -12,7 +12,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-002',
     nombre: 'Arroz',
     descripcion: 'Bolsa de Arroz de 1Kg',
-    precio: 900,
+    precio: 1100,
     imagen: 'img/arroz1.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
@@ -30,7 +30,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-004',
     nombre: 'Mayonesa Findy',
     descripcion: '',
-    precio: 950,
+    precio: 1000,
     imagen: 'img/mayonesaFind.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
@@ -48,7 +48,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-006',
     nombre: 'Mayonesa',
     descripcion: '',
-    precio: 950,
+    precio: 1000,
     imagen: 'img/mayonesa.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
@@ -111,7 +111,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-013',
     nombre: 'Sopa de Pollo',
     descripcion: 'Paquete de Sopa Instantanea de Pollo',
-    precio: 320,
+    precio: 350,
     imagen: 'img/sopaPollo.jpg',
     estado: 'disponible',
     categoria: 'Alimentos'
@@ -147,7 +147,7 @@ window.PRODUCTS_ALIMENTOS = [
     id: 'alim-017',
     nombre: 'Sopa de Res',
     descripcion: 'Paquete de Sopa Instantanea de Res',
-    precio: 320,
+    precio: 350,
     imagen: 'img/sopaRes.jpg',
     estado: 'agotado',
     categoria: 'Alimentos'
