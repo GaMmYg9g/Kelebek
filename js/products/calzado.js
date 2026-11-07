@@ -5,7 +5,7 @@ window.PRODUCTS_CALZADO = [
     descripcion: '',
     precio: 3800,
     imagen: 'img/havaianas.jpg',
-    estado: 'disponible',
+    estado: 'agotado',
     categoria: 'Calzado'
   },
   {
@@ -14,13 +14,13 @@ window.PRODUCTS_CALZADO = [
     descripcion: '',
     precio: 3800,
     imagen: 'img/havaianasR.jpg',
-    estado: 'disponible',
+    estado: 'agotado',
     categoria: 'Calzado'
   },
   {
     id: 'calz-003',
     nombre: 'Havaianas Negras',
-    descripcion: '',
+    descripcion: 'Número: 34 - 35',
     precio: 3800,
     imagen: 'img/havaianasN.jpg',
     estado: 'disponible',
@@ -29,7 +29,7 @@ window.PRODUCTS_CALZADO = [
   {
     id: 'calz-004',
     nombre: 'Havaianas Marrones',
-    descripcion: '',
+    descripcion: 'Número: 37',
     precio: 3800,
     imagen: 'img/havaianasMarr.jpg',
     estado: 'disponible',
@@ -38,7 +38,7 @@ window.PRODUCTS_CALZADO = [
   {
     id: 'calz-005',
     nombre: 'Sandalia Niño',
-    descripcion: '',
+    descripcion: 'Número: 24 - 25',
     precio: 3500,
     imagen: 'img/sandalNiño.jpg',
     estado: 'disponible',
@@ -47,7 +47,7 @@ window.PRODUCTS_CALZADO = [
   {
     id: 'calz-006',
     nombre: 'Zapatos Ninet',
-    descripcion: '',
+    descripcion: 'Número: 40',
     precio: 18000,
     imagen: 'img/zapatNinet.jpg',
     estado: 'disponible',
@@ -56,7 +56,7 @@ window.PRODUCTS_CALZADO = [
   {
     id: 'calz-007',
     nombre: 'Chanclas Niño',
-    descripcion: '',
+    descripcion: 'Número: 32 - 33',
     precio: 3500,
     imagen: 'img/chanclNiñoN.jpg',
     estado: 'disponible',
@@ -65,7 +65,7 @@ window.PRODUCTS_CALZADO = [
   {
     id: 'calz-007',
     nombre: 'Chanclas Niño',
-    descripcion: '',
+    descripcion: 'Número: 26 - 27',
     precio: 3500,
     imagen: 'img/chamclNiñoB.jpg',
     estado: 'disponible',
