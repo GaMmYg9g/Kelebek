@@ -37,7 +37,7 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-005',
-    nombre: 'Cream de Vie',
+    nombre: 'Crema de Vie',
     descripcion: '',
     precio: 1650,
     imagen: 'img/cremVieR.jpg',
@@ -46,7 +46,7 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-006',
-    nombre: 'Cream de Vie',
+    nombre: 'Crema de Vie',
     descripcion: '',
     precio: 1650,
     imagen: 'img/cremVieA.jpg',
