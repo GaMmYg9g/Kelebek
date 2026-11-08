@@ -37,7 +37,7 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-005',
-    nombre: 'Crema de Vie',
+    nombre: 'Cream de Vie',
     descripcion: '',
     precio: 1650,
     imagen: 'img/cremVieR.jpg',
@@ -46,10 +46,82 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-006',
-    nombre: 'Crema de Vie',
+    nombre: 'Cream de Vie',
     descripcion: '',
-    precio: 1950,
+    precio: 1650,
     imagen: 'img/cremVieA.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-007',
+    nombre: 'Malta',
+    descripcion: '',
+    precio: 700,
+    imagen: 'img/malta.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-008',
+    nombre: 'Windmill',
+    descripcion: '',
+    precio: 700,
+    imagen: 'img/windM.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-009',
+    nombre: 'Lander Bräu',
+    descripcion: '',
+    precio: 700,
+    imagen: 'img/landerB.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-010',
+    nombre: 'Hollandia',
+    descripcion: '',
+    precio: 700,
+    imagen: 'img/holland.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-011',
+    nombre: 'Refresco Gaseado',
+    descripcion: '',
+    precio: 600,
+    imagen: 'img/limonRG.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-012',
+    nombre: 'Refresco Gaseado',
+    descripcion: '',
+    precio: 600,
+    imagen: 'img/naranjaRG.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-013',
+    nombre: 'Refresco Gaseado',
+    descripcion: '',
+    precio: 600,
+    imagen: 'img/colaRG.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-014',
+    nombre: 'Jugo Natural',
+    descripcion: '',
+    precio: 600,
+    imagen: 'img/jugoLata.jpg',
     estado: 'disponible',
     categoria: 'Bebidas'
   },
