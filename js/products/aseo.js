@@ -72,4 +72,13 @@ window.PRODUCTS_ASEO = [
     estado: 'disponible',
     categoria: 'Aseo Personal'
   },
+  {
+    id: 'aseo-009',
+    nombre: 'Jabón de Baño',
+    descripcion: '',
+    precio: 500,
+    imagen: 'img/jabBano.jpg',
+    estado: 'disponible',
+    categoria: 'Aseo Personal'
+  },
 ];
