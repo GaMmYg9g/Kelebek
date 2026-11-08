@@ -197,4 +197,31 @@ window.PRODUCTS_ALIMENTOS = [
     estado: 'disponible',
     categoria: 'Alimentos'
   },
+  {
+    id: 'alim-023',
+    nombre: 'Leche en Polvo',
+    descripcion: 'Bolsa de Leche en Polvo',
+    precio: 5000,
+    imagen: 'img/lecheP.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-024',
+    nombre: 'Cartón de Huevo',
+    descripcion: '',
+    precio: 3700,
+    imagen: 'img/huevoCart.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-025',
+    nombre: 'Huevo',
+    descripcion: 'Por Unidad',
+    precio: 130,
+    imagen: 'img/huevoCart.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
 ];
