@@ -116,13 +116,4 @@ window.PRODUCTS_BEBIDAS = [
     estado: 'disponible',
     categoria: 'Bebidas'
   },
-  {
-    id: 'beb-014',
-    nombre: 'Jugo Natural',
-    descripcion: '',
-    precio: 600,
-    imagen: 'img/jugoLata.jpg',
-    estado: 'disponible',
-    categoria: 'Bebidas'
-  },
 ];
