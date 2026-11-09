@@ -48,7 +48,7 @@ window.PRODUCTS_BEBIDAS = [
     id: 'beb-006',
     nombre: 'Cream de Vie',
     descripcion: '',
-    precio: 1650,
+    precio: 1950,
     imagen: 'img/cremVieA.jpg',
     estado: 'disponible',
     categoria: 'Bebidas'
