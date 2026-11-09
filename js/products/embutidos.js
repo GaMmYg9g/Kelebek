@@ -3,7 +3,7 @@ window.PRODUCTS_EMBUTIDOS = [
     id: 'emb-001',
     nombre: 'Atún',
     descripcion: '',
-    precio: 700,
+    precio: 850,
     imagen: 'img/latAtun.jpg',
     estado: 'disponible',
     categoria: 'Embutidos y Cárnicos'
