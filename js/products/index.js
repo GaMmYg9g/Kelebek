@@ -3,7 +3,7 @@
     { key:'todos',      label:'Todos',      icon:'fa-solid fa-border-all',            data:null,                          especial:true },
     { key:'alimentos',  label:'Alimentos',  icon:'fa-solid fa-bowl-rice',             data:window.PRODUCTS_ALIMENTOS },
     { key:'bebidas',    label:'Bebidas',    icon:'fa-solid fa-bottle-water',          data:window.PRODUCTS_BEBIDAS },
-    { key:'embutidos',  label:'Embutidos',  icon:'fa-solid fa-drumstick-bite',        data:window.PRODUCTS_EMBUTIDOS },
+    { key:'embutidos',  label:'Carnes y Embutidos',  icon:'fa-solid fa-drumstick-bite',        data:window.PRODUCTS_EMBUTIDOS },
     { key:'confituras', label:'Confituras',     icon:'fa-solid fa-cookie-bite',           data:window.PRODUCTS_CONFITURAS },
     { key:'aseo',       label:'Aseo',       icon:'fa-solid fa-pump-soap',             data:window.PRODUCTS_ASEO },
     { key:'limpieza',   label:'Limpieza',   icon:'fa-solid fa-spray-can-sparkles',    data:window.PRODUCTS_LIMPIEZA },
