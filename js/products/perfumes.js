@@ -116,4 +116,49 @@ window.PRODUCTS_PERFUMES = [
     estado: 'disponible',
     categoria: 'Perfumería'
   },
+  {
+    id: 'perf-015',
+    nombre: 'Bolso',
+    descripcion: '',
+    precio: 18000,
+    imagen: 'img/bolso.jpg',
+    estado: 'disponible',
+    categoria: 'Perfumería'
+  },
+  {
+    id: 'perf-016',
+    nombre: 'Perfume NY Green',
+    descripcion: '',
+    precio: 3300,
+    imagen: 'img/perfGreen.jpg',
+    estado: 'disponible',
+    categoria: 'Perfumería'
+  },
+  {
+    id: 'perf-016',
+    nombre: 'Perfume Amore',
+    descripcion: '',
+    precio: 3300,
+    imagen: 'img/perfAmore.jpg',
+    estado: 'disponible',
+    categoria: 'Perfumería'
+  },
+  {
+    id: 'perf-016',
+    nombre: 'Perfume Fine Trend',
+    descripcion: '',
+    precio: 3300,
+    imagen: 'img/perfDubai.jpg',
+    estado: 'disponible',
+    categoria: 'Perfumería'
+  },
+  {
+    id: 'perf-016',
+    nombre: 'Perfume Commander',
+    descripcion: '',
+    precio: 3300,
+    imagen: 'img/perfCommander.jpg',
+    estado: 'disponible',
+    categoria: 'Perfumería'
+  },
 ];
