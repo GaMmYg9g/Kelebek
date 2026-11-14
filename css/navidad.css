@@ -105,3 +105,74 @@ body.theme-christmas .btn-primary:active {
   background: #0a2e1d;
   color: #ffffff;
 }
+
+/* ============================================
+   DECORACIÓN DEL LOGO (GORRO Y NIEVE)
+   ============================================ */
+
+/* Contenedor relativo para posicionar la nieve y el gorro */
+.brand-logo-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+}
+
+/* Ajustamos el logo para que llene el contenedor */
+.brand-logo-wrap .brand-logo {
+  width: 100%;
+  height: 100%;
+  /* Mantiene tus bordes y sombras originales */
+}
+
+/* LA NIEVE (Solo se ve en navidad) */
+body.theme-christmas .brand-snow {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  z-index: 3; /* Por encima de la imagen */
+  pointer-events: none;
+  /* Patrón de puntos blancos para la nieve */
+  background-image: 
+    radial-gradient(circle, #ffffff 2px, transparent 2.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1.5px, transparent 2px);
+  background-size: 16px 16px, 24px 24px;
+  background-position: 0 0, 8px 12px;
+  /* Animación de caída */
+  animation: snowfall 3s linear infinite;
+  /* Recorta la nieve para que no se salga del cuadro */
+  clip-path: inset(0 round 12px);
+  /* Brillo helado en la parte superior */
+  box-shadow: inset 0 10px 10px -10px rgba(255,255,255,0.8);
+}
+
+/* EL GORRO DE SANTA (Solo se ve en navidad) */
+body.theme-christmas .brand-logo-wrap::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  width: 45px;
+  height: 45px;
+  z-index: 4; /* Por encima de todo */
+  /* SVG del gorro de Santa */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 10 80 Q 50 100 90 80 L 85 55 Q 50 65 15 55 Z' fill='%23ffffff'/%3E%3Cpath d='M 15 55 Q 50 -20 85 20 Q 70 50 85 55 Q 50 65 15 55 Z' fill='%23d62828'/%3E%3Ccircle cx='85' cy='20' r='12' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Un poco de rotación para que se vea desenfadado */
+  transform: rotate(15deg); 
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+  /* Animación de balanceo */
+  animation: hatBounce 2s ease-in-out infinite alternate;
+}
+
+/* Animaciones */
+@keyframes snowfall {
+  0% { background-position: 0 0, 8px 12px; }
+  100% { background-position: 0 16px, 8px 36px; }
+}
+
+@keyframes hatBounce {
+  0% { transform: rotate(15deg) translateY(0); }
+  100% { transform: rotate(22deg) translateY(-3px); }
+}
