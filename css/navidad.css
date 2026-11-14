@@ -1,0 +1,107 @@
+/* ============================================
+   TEMA AUTOMÁTICO: NAVIDAD
+   ============================================ */
+
+body.theme-christmas {
+  /* Sobrescribimos las variables globales */
+  --black: #0a2e1d; /* Verde pino oscuro */
+  --gold: #d62828;  /* Rojo navideño */
+  --gold-dark: #9d0208;
+  --gradient-border: linear-gradient(135deg, #0a2e1d 0%, #0a2e1d 45%, #d62828 55%, #d62828 100%);
+  
+  /* Fondo con tono invernal */
+  background-image: linear-gradient(135deg, #e8f4f8 0%, #ffffff 100%);
+}
+
+/* Fondo general más claro para que resalte el rojo y verde */
+body.theme-christmas::before {
+  background: rgba(255, 255, 255, 0.90);
+}
+
+/* Header en verde pino */
+body.theme-christmas .app-header {
+  background: #0a2e1d;
+  border-bottom: 2px solid #d62828;
+}
+
+/* El nombre de la tienda en blanco para que contraste */
+body.theme-christmas .brand {
+  color: #ffffff; 
+}
+
+body.theme-christmas .brand-logo {
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
+}
+
+/* Botón del carrito en rojo */
+body.theme-christmas .cart-btn {
+  background: #d62828;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(214, 40, 40, 0.6);
+}
+
+/* Botones de categorías */
+body.theme-christmas .cat-btn {
+  color: #0a2e1d;
+  background: rgba(255, 255, 255, 0.8);
+}
+body.theme-christmas .cat-btn.active {
+  background: #d62828;
+  color: #ffffff;
+}
+body.theme-christmas .cat-btn.active i {
+  color: #ffffff;
+}
+
+/* Botón de info flotante */
+body.theme-christmas .fab-info {
+  background: #d62828;
+  color: #ffffff;
+  border-color: #0a2e1d;
+}
+
+body.theme-christmas .fab-stack.open .fab-info {
+  background: #0a2e1d;
+  color: #ffffff;
+}
+
+/* Títulos de sección */
+body.theme-christmas .section-title {
+  color: #0a2e1d;
+  border-left-color: #d62828;
+}
+body.theme-christmas .section-title i {
+  color: #d62828;
+}
+
+/* Tarjetas y modales con sombra navideña */
+body.theme-christmas .product-card,
+body.theme-christmas .info-card,
+body.theme-christmas .modal-box {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(10, 46, 29, 0.15);
+}
+
+/* Botón de comprar */
+body.theme-christmas .buy-btn {
+  background: #d62828;
+  color: #ffffff;
+  border-color: #d62828;
+}
+body.theme-christmas .buy-btn:active {
+  background: #ffffff;
+  color: #d62828;
+}
+
+/* Botón de Pedir en el carrito */
+body.theme-christmas .btn-primary {
+  background: #d62828;
+  color: #ffffff;
+  border-color: #d62828;
+}
+body.theme-christmas .btn-primary:active {
+  background: #0a2e1d;
+  color: #ffffff;
+}
