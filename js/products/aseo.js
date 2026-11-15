@@ -81,4 +81,13 @@ window.PRODUCTS_ASEO = [
     estado: 'disponible',
     categoria: 'Aseo Personal'
   },
+  {
+    id: 'aseo-010',
+    nombre: 'Cepillo Dental',
+    descripcion: '',
+    precio: 500,
+    imagen: 'img/cepDent.jpg',
+    estado: 'disponible',
+    categoria: 'Aseo Personal'
+  },
 ];
