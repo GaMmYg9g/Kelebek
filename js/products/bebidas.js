@@ -130,7 +130,7 @@ window.PRODUCTS_BEBIDAS = [
     nombre: Jugo de Caja',
     descripcion: '',
     precio: 400,
-    imagen: 'img/juguitos.jpg',
+    imagen: 'img/jugitos.jpg',
     estado: 'disponible',
     categoria: 'Bebidas'
   },
