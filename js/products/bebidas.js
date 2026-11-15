@@ -127,7 +127,7 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-015',
-    nombre: 'Juguo de Caja',
+    nombre: Jugo de Caja',
     descripcion: '',
     precio: 400,
     imagen: 'img/juguitos.jpg',
