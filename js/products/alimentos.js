@@ -224,4 +224,58 @@ window.PRODUCTS_ALIMENTOS = [
     estado: 'disponible',
     categoria: 'Alimentos'
   },
+  {
+    id: 'alim-026',
+    nombre: 'Margarina Adorita',
+    descripcion: '',
+    precio: 650,
+    imagen: 'img/adorita.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-027',
+    nombre: 'Margarina Mesa',
+    descripcion: '',
+    precio: 650,
+    imagen: 'img/margarina.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-028',
+    nombre: 'Mayonesa Rayan',
+    descripcion: '',
+    precio: 700,
+    imagen: 'img/mayoRayan.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-029',
+    nombre: 'Sazón',
+    descripcion: '',
+    precio: 70,
+    imagen: 'img/sazon3.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-030',
+    nombre: 'Vino Seco',
+    descripcion: '',
+    precio: 450,
+    imagen: 'img/vinoSeco.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
+  {
+    id: 'alim-031',
+    nombre: 'Chicharos',
+    descripcion: '',
+    precio: 950,
+    imagen: 'img/chicharo.jpg',
+    estado: 'disponible',
+    categoria: 'Alimentos'
+  },
 ];
