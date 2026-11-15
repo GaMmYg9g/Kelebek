@@ -170,4 +170,40 @@ window.PRODUCTS_CONFITURAS = [
     estado: 'disponible',
     categoria: 'Snacks y Confituras'
   },
+  {
+    id: 'conf-020',
+    nombre: 'Palitos de Leche',
+    descripcion: '',
+    precio: 500,
+    imagen: 'img/palitoLech.jpg',
+    estado: 'disponible',
+    categoria: 'Snacks y Confituras'
+  },
+  {
+    id: 'conf-021',
+    nombre: 'Donuts',
+    descripcion: '',
+    precio: 250,
+    imagen: 'img/donut.jpg',
+    estado: 'disponible',
+    categoria: 'Snacks y Confituras'
+  },
+  {
+    id: 'conf-022',
+    nombre: 'Conitos de Chocolate',
+    descripcion: '',
+    precio: 280,
+    imagen: 'img/richy.jpg',
+    estado: 'disponible',
+    categoria: 'Snacks y Confituras'
+  },
+  {
+    id: 'conf-023',
+    nombre: 'Gofibi',
+    descripcion: '',
+    precio: 280,
+    imagen: 'img/gofibi.jpg',
+    estado: 'disponible',
+    categoria: 'Snacks y Confituras'
+  },
 ];
