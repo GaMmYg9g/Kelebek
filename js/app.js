@@ -68,11 +68,6 @@
     if (state.query){
       list = window.Search.filter(list, state.query);
     }
-    
-    // --- ORDENAMIENTO ALFABÉTICO ---
-    // localeCompare compara los nombres ignorando mayúsculas/minúsculas y acentos.
-    list.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' }));
-    
     return list;
   }
 
@@ -170,9 +165,6 @@
     }
     sec.classList.remove('hidden');
     grid.innerHTML = '';
-    
-    // Ordenamos también las ofertas alfabéticamente
-    conOferta.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' }));
     conOferta.forEach(p => grid.appendChild(createCard(p)));
   }
 
@@ -304,6 +296,7 @@
       chk.addEventListener('change', (e) => {
         window.DomicilioState.incluir = e.target.checked;
         
+        // Si lo desmarca, limpiamos los datos de envío por si acaso
         if (!e.target.checked) {
           window.DomicilioState.nombre = '';
           window.DomicilioState.movil = '';
@@ -316,6 +309,7 @@
       body.appendChild(domDiv);
     }
 
+    // Calcular total sumando el domicilio matemáticamente
     let total = window.Cart.total();
     if (window.DomicilioState && window.DomicilioState.incluir && window.DOMICILIO_CONFIG.activo) {
       total += window.DOMICILIO_CONFIG.precio;
@@ -374,6 +368,7 @@
 
     const totalArticulos = items.reduce((a,i) => a + i.qty, 0);
     
+    // Calcular total sumando el domicilio
     let totalFinal = window.Cart.total();
     if (incluirDom) {
       totalFinal += window.DOMICILIO_CONFIG.precio;
@@ -408,12 +403,14 @@ ${LINE}
 
     if (window.DOMICILIO_CONFIG && window.DOMICILIO_CONFIG.activo) {
       if (window.DomicilioState.incluir) {
+        // Ya está marcado: abrimos el formulario de datos
         if (typeof window.abrirModalDatosDomicilio === 'function') {
           window.abrirModalDatosDomicilio();
         } else {
-          procederConCheckout();
+          procederConCheckout(); // Fallback
         }
       } else {
+        // No está marcado: abrimos el seguro (segunda oportunidad)
         if (typeof window.abrirModalSeguroDomicilio === 'function') {
           window.abrirModalSeguroDomicilio();
         } else {
@@ -429,11 +426,14 @@ ${LINE}
     const info = window.STORE_INFO;
     const msg  = buildOrderMessage();
     
+    // Buscamos el número de pedidos. Si no existe, usamos el teléfono.
     const numeroDestino = info.whatsappPedidos || info.telefono;
     
+    // Abrimos el chat personal con el mensaje pre-rellenado
     const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
 
+    // Limpiamos el carrito y el estado del domicilio
     window.Cart.clear();
     if (window.DomicilioState) {
       window.DomicilioState.incluir = false;
