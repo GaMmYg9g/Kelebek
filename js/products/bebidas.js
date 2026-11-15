@@ -119,7 +119,7 @@ window.PRODUCTS_BEBIDAS = [
   {
     id: 'beb-014',
     nombre: 'Jugo Natural',
-    descripcion: '',
+    descripcion: 'Lata de jugo',
     precio: 600,
     imagen: 'img/jugoLata.jpg',
     estado: 'disponible',
@@ -127,8 +127,8 @@ window.PRODUCTS_BEBIDAS = [
   },
   {
     id: 'beb-015',
-    nombre: Jugo de Caja',
-    descripcion: '',
+    nombre: 'Jugo Natural',
+    descripcion: 'Caja de jugo',
     precio: 400,
     imagen: 'img/jugitos.jpg',
     estado: 'disponible',
