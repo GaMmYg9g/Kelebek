@@ -116,4 +116,58 @@ window.PRODUCTS_BEBIDAS = [
     estado: 'disponible',
     categoria: 'Bebidas'
   },
+  {
+    id: 'beb-014',
+    nombre: 'Jugo Natural',
+    descripcion: '',
+    precio: 600,
+    imagen: 'img/jugoLata.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-015',
+    nombre: 'Juguo de Caja',
+    descripcion: '',
+    precio: 400,
+    imagen: 'img/juguitos.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-016',
+    nombre: 'Milner',
+    descripcion: '',
+    precio: 1900,
+    imagen: 'img/milner.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-017',
+    nombre: 'Energizante',
+    descripcion: '',
+    precio: 800,
+    imagen: 'img/energizante.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-018',
+    nombre: 'Ron Criollo',
+    descripcion: '',
+    precio: 2150,
+    imagen: 'img/ronCriollo.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
+  {
+    id: 'beb-019',
+    nombre: 'Refresco Gaseado de Limón',
+    descripcion: '2 litros',
+    precio: 1500,
+    imagen: 'img/limon2L.jpg',
+    estado: 'disponible',
+    categoria: 'Bebidas'
+  },
 ];
