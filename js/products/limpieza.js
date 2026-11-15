@@ -5,7 +5,7 @@ window.PRODUCTS_LIMPIEZA = [
     descripcion: '',
     precio: 950,
     imagen: 'img/detergAreli.jpg',
-    estado: 'agotado',
+    estado: 'disponible',
     categoria: 'Limpieza del Hogar'
   },
   {
@@ -41,6 +41,15 @@ window.PRODUCTS_LIMPIEZA = [
     descripcion: '',
     precio: 1300,
     imagen: 'img/detergYamy.jpg',
+    estado: 'disponible',
+    categoria: 'Limpieza del Hogar'
+  },
+  {
+    id: 'limp-006',
+    nombre: 'Limpiador de Superficies',
+    descripcion: '',
+    precio: 4200,
+    imagen: 'img/limpiaSuperf.jpg',
     estado: 'disponible',
     categoria: 'Limpieza del Hogar'
   },
