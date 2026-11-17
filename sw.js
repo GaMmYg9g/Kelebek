@@ -11,14 +11,15 @@ const PRECACHE = [
   './manifest.json',
   './css/styles.css',
   './css/components.css',
-  './css/navidad.css', // <-- NUEVO CSS
+  './css/navidad.css',
   './js/app.js',
   './js/cart.js',
   './js/search.js',
   './js/store-info.js',
   './js/ofertas.js',
   './js/domicilio.js',
-  './js/navidad.js', // <-- NUEVO SCRIPT
+  './js/navidad.js',
+  './js/install.js',
   
   './js/products/alimentos.js',
   './js/products/bebidas.js',
@@ -116,5 +117,5 @@ async function cacheFirst(req) {
 }
 
 self.addEventListener('message', (event) => {
-  if (event.data === 'SKIP_WAITING') self.waiting();
+  if (event.data === 'SKIP_WAITING') self.skipWaiting();
 });
